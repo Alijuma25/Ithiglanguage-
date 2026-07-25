@@ -1,0 +1,11 @@
+{
+  "name": "ithig-speak-translator",
+  "version": "1.0.0",
+  "description": "Listens to your mic and decodes Ithig-Speak into English.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/ithig.test.js"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ithig-Speak Translator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Ithig-Speak <span>&rarr;</span> English</h1>
+      <p class="subtitle">Listen to your mic and decode Ithig-Speak on the fly.</p>
+    </header>
+
+    <section class="mic-panel">
+      <button id="mic-btn" class="mic-btn" type="button">
+        <span id="mic-icon" class="mic-icon">&#127908;</span>
+        <span id="mic-label">Start Listening</span>
+      </button>
+      <p id="mic-status" class="mic-status">Mic is off</p>
+      <p id="mic-support" class="mic-support" hidden>
+        Your browser doesn't support live speech recognition (try Chrome or Edge on desktop).
+        You can still paste/type Ithig-Speak text below to decode it.
+      </p>
+    </section>
+
+    <section class="panels">
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Heard (Ithig-Speak)</h2>
+          <button id="clear-heard" class="link-btn" type="button">Clear</button>
+        </div>
+        <textarea id="heard-text" placeholder="What you say (or type) shows up here..."></textarea>
+      </div>
+
+      <div class="panel">
+        <div class="panel-header">
+          <h2>Decoded (English)</h2>
+          <button id="copy-decoded" class="link-btn" type="button">Copy</button>
+        </div>
+        <textarea id="decoded-text" readonly placeholder="Decoded English appears here..."></textarea>
+      </div>
+    </section>
+
+    <section class="encoder">
+      <details>
+        <summary>Bonus: encode English &rarr; Ithig-Speak</summary>
+        <div class="encoder-body">
+          <textarea id="encode-input" placeholder="Type plain English..."></textarea>
+          <textarea id="encode-output" readonly placeholder="Ithig-Speak version..."></textarea>
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <p>
+        Rule: split each syllable roughly at its vowel, jam <code>ithig</code> in the middle.
+        Multi-syllable words often come out as separate pieces &mdash; the decoder tries to
+        stitch them back together using a dictionary of common words, and falls back to a
+        best guess for names/slang it doesn't recognize.
+      </p>
+    </footer>
+  </main>
+
+  <script src="ithig.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
